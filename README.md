@@ -20,7 +20,7 @@ Python을 기반으로 **데이터 분석, 통계, 머신러닝, SQL, 데이터�
 ### Language
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=database&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 
 ### Data Analysis
 
@@ -29,6 +29,13 @@ Python을 기반으로 **데이터 분석, 통계, 머신러닝, SQL, 데이터�
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=flat-square&logo=python&logoColor=white)
 ![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=flat-square&logo=python&logoColor=white)
 ![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white)
+
+
+### Statistics
+
+![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white)
+![statsmodels](https://img.shields.io/badge/statsmodels-4051B5?style=flat-square&logo=python&logoColor=white)
+
 
 ### Machine Learning
 
@@ -55,8 +62,7 @@ Python을 기반으로 **데이터 분석, 통계, 머신러닝, SQL, 데이터�
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)
-
+![VS Code](https://badgen.net/badge/VS%20Code/%E2%80%8B/007ACC?icon=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fdevicons%2Fdevicon%40latest%2Ficons%2Fvscode%2Fvscode-original.svg&labelColor=007ACC)
 </div>
 
 <br>
