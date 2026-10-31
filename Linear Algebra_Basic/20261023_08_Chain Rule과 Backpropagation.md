@@ -3,9 +3,9 @@
 
 <br>
 
-# **1. 합성함수와 Chain Rule의 수학적 원리**
+# 1. 합성함수와 Chain Rule의 수학적 원리
 
-> ## **1-1) 합성함수(Composite Function)란?**
+## 1-1) 합성함수(Composite Function)란?
 
 합성함수는 **앞의 함수에서 계산한 결과가 다음 함수의 입력으로 사용되는 구조**이다.
 
@@ -62,7 +62,7 @@ Loss
 
 <br>
 
-> ## **1-2) 중간 변수(Intermediate Variable)**
+## 1-2) 중간 변수(Intermediate Variable)
 
 복잡한 함수를 한 번에 계산하지 않고 중간 변수를 정의하면 계산 구조를 쉽게 이해할 수 있다.
 
@@ -107,7 +107,7 @@ f = 7²
 
 <br>
 
-> ## **1-3) Chain Rule이 필요한 이유**
+## 1-3) Chain Rule이 필요한 이유
 
 최종 함수 `f`는 `z`에 의해 변하고, `z`는 다시 `x`에 의해 변한다.
 
@@ -124,11 +124,7 @@ z가 변할 때 f의 변화
 Chain Rule은 다음과 같다.
 
 $$
-\frac{df}{dx}
-=
-\frac{df}{dz}
-\times
-\frac{dz}{dx}
+\frac{df}{dx} = \frac{df}{dz} \times \frac{dz}{dx}
 $$
 
 즉,
@@ -143,18 +139,15 @@ $$
 
 로 이해할 수 있다.
 
-
-|수식|	의미|정의|미분 방법|미분 결과|
+| 수식 | 의미 | 정의 | 미분 방법 | 미분 결과 |
 |---|---|---|---|---|
-|$$\frac{df}{dx}$$|`x`에 대한 `f`의 변화율|`x`가 바뀌면 `f`가 얼마나 변할까?|$f=(3x+1)^2$를 `x`로 미분|$6(3x+1)$
-|$$\frac{df}{dz}$$|`z`에 대한 `f`의 변화율|`z`가 바뀌면 `f`가 얼마나 변할까?|$f=z^2$ 를 `z`로 미분|$2z$|
-|$$\frac{dz}{dx}$$|`x`에 대한 `z`의 변화율|`x`가 바뀌면 `z`가 얼마나 변할까?|$z=3x+1$ 을 `x`로 미분|$3$|
-
-
+| $\frac{df}{dx}$ | `x`에 대한 `f`의 변화율 | `x`가 바뀌면 `f`가 얼마나 변할까? | $f=(3x+1)^2$를 `x`로 미분 | $6(3x+1)$ |
+| $\frac{df}{dz}$ | `z`에 대한 `f`의 변화율 | `z`가 바뀌면 `f`가 얼마나 변할까? | $f=z^2$를 `z`로 미분 | $2z$ |
+| $\frac{dz}{dx}$ | `x`에 대한 `z`의 변화율 | `x`가 바뀌면 `z`가 얼마나 변할까? | $z=3x+1$을 `x`로 미분 | $3$ |
 
 <br>
 
-> ## **1-4) Local Derivative**
+## 1-4) Local Derivative
 
 Local Derivative는 **하나의 연산에서 입력 변화에 따른 출력 변화율**이다.
 
@@ -168,17 +161,13 @@ f = z²
 먼저
 
 $$
-\frac{df}{dz}
-=
-2z
+\frac{df}{dz} = 2z
 $$
 
 이고,
 
 $$
-\frac{dz}{dx}
-=
-3
+\frac{dz}{dx} = 3
 $$
 
 이다.
@@ -186,9 +175,7 @@ $$
 따라서 Chain Rule을 적용하면
 
 $$
-\frac{df}{dx}
-=
-2z \times 3
+\frac{df}{dx} = 2z \times 3
 $$
 
 이다.
@@ -196,21 +183,18 @@ $$
 `z = 3x+1`을 다시 넣으면
 
 $$
-\frac{df}{dx}
-=
-6(3x+1)
+\frac{df}{dx} = 6(3x+1)
 $$
 
 $$
-=
-18x+6
+= 18x+6
 $$
 
 이 된다.
 
 <br>
 
-> ## **1-5) 특정 지점에서 Chain Rule 계산**
+## 1-5) 특정 지점에서 Chain Rule 계산
 
 `x=2`라면 먼저 중간값은
 
@@ -224,29 +208,19 @@ z = 3×2 + 1
 따라서
 
 $$
-\frac{df}{dz}
-=
-2\times7
-=
-14
+\frac{df}{dz} = 2\times7 = 14
 $$
 
 이고,
 
 $$
-\frac{dz}{dx}
-=
-3
+\frac{dz}{dx} = 3
 $$
 
 이므로
 
 $$
-\frac{df}{dx}
-=
-14\times3
-=
-42
+\frac{df}{dx} = 14\times3 = 42
 $$
 
 이다.
@@ -264,7 +238,7 @@ $$
 
 <br>
 
-> ## **1-6) Python으로 합성함수와 Chain Rule 확인**
+## 1-6) Python으로 합성함수와 Chain Rule 확인
 
 [ Python : code ] "합성함수의 순전파와 Chain Rule 기울기 계산"
 
@@ -335,7 +309,7 @@ dz/dx
 
 <br>
 
-> ## **1-7) 함수가 세 개 이상 연결되는 경우**
+## 1-7) 함수가 세 개 이상 연결되는 경우
 
 Chain Rule은 함수가 여러 개 연결되어 있어도 동일하게 적용된다.
 
@@ -366,13 +340,7 @@ L
 따라서
 
 $$
-\frac{dL}{dx}
-=
-\frac{dL}{dz}
-\times
-\frac{dz}{da}
-\times
-\frac{da}{dx}
+\frac{dL}{dx} = \frac{dL}{dz} \times \frac{dz}{da} \times \frac{da}{dx}
 $$
 
 이다.
@@ -390,25 +358,15 @@ L = (9-5)² = 16
 각 Local Gradient는
 
 $$
-\frac{dL}{dz}
-=
-2(z-5)
-=
-8
+\frac{dL}{dz} = 2(z-5) = 8
 $$
 
 $$
-\frac{dz}{da}
-=
-2a
-=
-6
+\frac{dz}{da} = 2a = 6
 $$
 
 $$
-\frac{da}{dx}
-=
-2
+\frac{da}{dx} = 2
 $$
 
 이다.
@@ -416,18 +374,14 @@ $$
 따라서
 
 $$
-\frac{dL}{dx}
-=
-8\times6\times2
-=
-96
+\frac{dL}{dx} = 8\times6\times2 = 96
 $$
 
 이다.
 
 <br>
 
-> ## **1-8) Python으로 여러 단계 Chain Rule 계산**
+## 1-8) Python으로 여러 단계 Chain Rule 계산
 
 [ Python : code ] "여러 함수가 연결된 경우의 Chain Rule 계산"
 
@@ -476,7 +430,7 @@ dL/dx: 96.0
 
 <br>
 
-> ## **1-9) 머신러닝에서 Chain Rule**
+## 1-9) 머신러닝에서 Chain Rule
 
 회귀 모델을 생각해 보자.
 
@@ -500,11 +454,7 @@ L 변화
 따라서 `w`에 대한 손실의 기울기는
 
 $$
-\frac{\partial L}{\partial w}
-=
-\frac{\partial L}{\partial \hat{y}}
-\times
-\frac{\partial \hat{y}}{\partial w}
+\frac{\partial L}{\partial w} = \frac{\partial L}{\partial \hat{y}} \times \frac{\partial \hat{y}}{\partial w}
 $$
 
 이다.
@@ -512,18 +462,14 @@ $$
 편향도 마찬가지다.
 
 $$
-\frac{\partial L}{\partial b}
-=
-\frac{\partial L}{\partial \hat{y}}
-\times
-\frac{\partial \hat{y}}{\partial b}
+\frac{\partial L}{\partial b} = \frac{\partial L}{\partial \hat{y}} \times \frac{\partial \hat{y}}{\partial b}
 $$
 
 이 원리가 신경망의 Backpropagation까지 그대로 확장된다.
 
 <br>
 
-> ## **1-10) Chain Rule과 신경망**
+## 1-10) Chain Rule과 신경망
 
 간단한 DNN을 생각하면 다음과 같다.
 
@@ -555,14 +501,13 @@ W₁
 
 따라서 Deep Neural Network의 학습에서 Chain Rule은 핵심적인 수학 원리이다.
 
-
 <br><br>
 
 ---
 
-# **2. 순전파와 역전파의 원리**
+# 2. 순전파와 역전파의 원리
 
-> ## **2-1) Forward Propagation이란?**
+## 2-1) Forward Propagation이란?
 
 Forward Propagation은 **입력에서 시작하여 모델의 예측값과 손실을 계산하는 과정**이다.
 
@@ -594,7 +539,7 @@ Loss 계산
 
 <br>
 
-> ## **2-2) 회귀 모델 Forward 계산**
+## 2-2) 회귀 모델 Forward 계산
 
 다음 값을 사용해보자.
 
@@ -608,11 +553,7 @@ Loss 계산
 예측값은
 
 $$
-\hat{y}
-=
-3\times2+1
-=
-7
+\hat{y} = 3\times2+1 = 7
 $$
 
 이다.
@@ -620,11 +561,7 @@ $$
 손실은
 
 $$
-L
-=
-(10-7)^2
-=
-9
+L = (10-7)^2 = 9
 $$
 
 이다.
@@ -643,7 +580,7 @@ Loss = 9
 
 <br>
 
-> ## **2-3) Backpropagation이란?**
+## 2-3) Backpropagation이란?
 
 Backpropagation은 **최종 Loss에서 시작하여 각 Parameter에 대한 Gradient를 계산하는 과정**이다.
 
@@ -682,7 +619,7 @@ Loss에 대한 Gradient를
 
 <br>
 
-> ## **2-4) Forward와 Backward 비교**
+## 2-4) Forward와 Backward 비교
 
 | 구분 | Forward Propagation | Backpropagation |
 | --- | --- | --- |
@@ -698,7 +635,7 @@ Parameter Update는 Optimizer가 담당한다.
 
 <br>
 
-> ## **2-5) 손실에서 Prediction으로 Gradient 전달**
+## 2-5) 손실에서 Prediction으로 Gradient 전달
 
 손실은
 
@@ -711,9 +648,7 @@ L = (y - ŷ)²
 이를 `ŷ`에 대해 미분하면
 
 $$
-\frac{\partial L}{\partial \hat{y}}
-=
-2(\hat{y}-y)
+\frac{\partial L}{\partial \hat{y}} = 2(\hat{y}-y)
 $$
 
 이다.
@@ -728,18 +663,14 @@ y = 10
 이므로
 
 $$
-\frac{\partial L}{\partial \hat{y}}
-=
-2(7-10)
-=
--6
+\frac{\partial L}{\partial \hat{y}} = 2(7-10) = -6
 $$
 
 이다.
 
 <br>
 
-> ## **2-6) 가중치 Gradient 계산**
+## 2-6) 가중치 Gradient 계산
 
 Prediction은
 
@@ -752,9 +683,7 @@ Prediction은
 가중치에 대한 Local Gradient는
 
 $$
-\frac{\partial \hat{y}}{\partial w}
-=
-x
+\frac{\partial \hat{y}}{\partial w} = x
 $$
 
 이다.
@@ -762,9 +691,7 @@ $$
 현재 `x=2`이므로
 
 $$
-\frac{\partial \hat{y}}{\partial w}
-=
-2
+\frac{\partial \hat{y}}{\partial w} = 2
 $$
 
 이다.
@@ -772,35 +699,27 @@ $$
 Chain Rule을 적용하면
 
 $$
-\frac{\partial L}{\partial w}
-=
-\frac{\partial L}{\partial \hat{y}}
-\times
-\frac{\partial \hat{y}}{\partial w}
+\frac{\partial L}{\partial w} = \frac{\partial L}{\partial \hat{y}} \times \frac{\partial \hat{y}}{\partial w}
 $$
 
 $$
-=
--6\times2
+= -6\times2
 $$
 
 $$
-=
--12
+= -12
 $$
 
 이다.
 
 <br>
 
-> ## **2-7) 편향 Gradient 계산**
+## 2-7) 편향 Gradient 계산
 
 편향은
 
 $$
-\frac{\partial \hat{y}}{\partial b}
-=
-1
+\frac{\partial \hat{y}}{\partial b} = 1
 $$
 
 이다.
@@ -808,11 +727,7 @@ $$
 따라서
 
 $$
-\frac{\partial L}{\partial b}
-=
--6\times1
-=
--6
+\frac{\partial L}{\partial b} = -6\times1 = -6
 $$
 
 이다.
@@ -829,7 +744,7 @@ $$
 
 <br>
 
-> ## **2-8) Python 회귀 모델 Forward·Backward 예제**
+## 2-8) Python 회귀 모델 Forward·Backward 예제
 
 운동역학 센서에서 하나의 입력 특성을 이용해 특정 지표를 예측한다고 가정하자.
 
@@ -847,14 +762,12 @@ b = 1.0
 # --------------------
 # Forward
 # --------------------
-
 y_pred = w * x + b
 loss = (y - y_pred) ** 2
 
 # --------------------
 # Backward
 # --------------------
-
 dL_dy_pred = 2 * (y_pred - y)
 
 dy_pred_dw = x
@@ -882,7 +795,7 @@ dL/db: -6.0
 
 <br>
 
-> ## **2-9) Gradient 부호의 의미**
+## 2-9) Gradient 부호의 의미
 
 현재
 
@@ -895,12 +808,7 @@ dL/dw = -12
 Gradient Descent의 기본 업데이트는
 
 $$
-w_{new}
-=
-w_{old}
--
-\eta
-\frac{\partial L}{\partial w}
+w_{new} = w_{old} - \eta \frac{\partial L}{\partial w}
 $$
 
 이다.
@@ -918,16 +826,11 @@ w_old - 음수
 예를 들어 Learning Rate가 `0.01`이라면
 
 $$
-w_{new}
-=
-3
--
-0.01(-12)
+w_{new} = 3 - 0.01(-12)
 $$
 
 $$
-=
-3.12
+= 3.12
 $$
 
 이다.
@@ -935,20 +838,14 @@ $$
 마찬가지로
 
 $$
-b_{new}
-=
-1
--
-0.01(-6)
-=
-1.06
+b_{new} = 1 - 0.01(-6) = 1.06
 $$
 
 이다.
 
 <br>
 
-> ## **2-10) Backpropagation과 Parameter Update의 차이**
+## 2-10) Backpropagation과 Parameter Update의 차이
 
 | 과정 | 역할 | 대표적인 표현 |
 | --- | --- | --- |
@@ -973,7 +870,7 @@ Optimizer는 그 기울기를 이용하여 실제 Parameter를 변경한다.
 
 <br>
 
-> ## **2-11) 여러 Layer가 연결된 경우**
+## 2-11) 여러 Layer가 연결된 경우
 
 다음과 같은 모델을 생각하자.
 
@@ -1010,16 +907,12 @@ Loss
 
 <br>
 
-> ## **2-12) 여러 Layer의 Forward**
+## 2-12) 여러 Layer의 Forward
 
 첫 번째 연산은
 
 $$
-a
-=
-2\times2+1
-=
-5
+a = 2\times2+1 = 5
 $$
 
 이다.
@@ -1027,11 +920,7 @@ $$
 두 번째 연산은
 
 $$
-\hat{y}
-=
-2\times5
-=
-10
+\hat{y} = 2\times5 = 10
 $$
 
 이다.
@@ -1039,11 +928,7 @@ $$
 Loss는
 
 $$
-L
-=
-(12-10)^2
-=
-4
+L = (12-10)^2 = 4
 $$
 
 이다.
@@ -1064,16 +949,12 @@ Loss = 4
 
 <br>
 
-> ## **2-13) 출력 Layer의 Backward**
+## 2-13) 출력 Layer의 Backward
 
 먼저
 
 $$
-\frac{\partial L}{\partial \hat{y}}
-=
-2(10-12)
-=
--4
+\frac{\partial L}{\partial \hat{y}} = 2(10-12) = -4
 $$
 
 이다.
@@ -1081,11 +962,7 @@ $$
 두 번째 Weight는
 
 $$
-\frac{\partial L}{\partial w_2}
-=
-\frac{\partial L}{\partial \hat{y}}
-\times
-\frac{\partial \hat{y}}{\partial w_2}
+\frac{\partial L}{\partial w_2} = \frac{\partial L}{\partial \hat{y}} \times \frac{\partial \hat{y}}{\partial w_2}
 $$
 
 이다.
@@ -1093,11 +970,7 @@ $$
 `ŷ = w₂a+b₂`이므로
 
 $$
-\frac{\partial \hat{y}}{\partial w_2}
-=
-a
-=
-5
+\frac{\partial \hat{y}}{\partial w_2} = a = 5
 $$
 
 이다.
@@ -1105,11 +978,7 @@ $$
 따라서
 
 $$
-\frac{\partial L}{\partial w_2}
-=
--4\times5
-=
--20
+\frac{\partial L}{\partial w_2} = -4\times5 = -20
 $$
 
 이다.
@@ -1117,45 +986,31 @@ $$
 편향은
 
 $$
-\frac{\partial L}{\partial b_2}
-=
--4
+\frac{\partial L}{\partial b_2} = -4
 $$
 
 이다.
 
 <br>
 
-> ## **2-14) 이전 Layer로 Gradient 전달**
+## 2-14) 이전 Layer로 Gradient 전달
 
 첫 번째 Layer까지 Gradient를 전달하려면 중간 변수 `a`에 대한 기울기를 구해야 한다.
 
 $$
-\frac{\partial L}{\partial a}
-=
-\frac{\partial L}{\partial \hat{y}}
-\times
-\frac{\partial \hat{y}}{\partial a}
+\frac{\partial L}{\partial a} = \frac{\partial L}{\partial \hat{y}} \times \frac{\partial \hat{y}}{\partial a}
 $$
 
 이고
 
 $$
-\frac{\partial \hat{y}}{\partial a}
-=
-w_2
-=
-2
+\frac{\partial \hat{y}}{\partial a} = w_2 = 2
 $$
 
 이므로
 
 $$
-\frac{\partial L}{\partial a}
-=
--4\times2
-=
--8
+\frac{\partial L}{\partial a} = -4\times2 = -8
 $$
 
 이다.
@@ -1164,7 +1019,7 @@ $$
 
 <br>
 
-> ## **2-15) 첫 번째 Layer Parameter Gradient**
+## 2-15) 첫 번째 Layer Parameter Gradient
 
 첫 번째 연산은
 
@@ -1177,17 +1032,11 @@ a = w₁x + b₁
 따라서
 
 $$
-\frac{\partial L}{\partial w_1}
-=
-\frac{\partial L}{\partial a}
-\times x
+\frac{\partial L}{\partial w_1} = \frac{\partial L}{\partial a} \times x
 $$
 
 $$
-=
--8\times2
-=
--16
+= -8\times2 = -16
 $$
 
 이다.
@@ -1195,9 +1044,7 @@ $$
 편향은
 
 $$
-\frac{\partial L}{\partial b_1}
-=
--8
+\frac{\partial L}{\partial b_1} = -8
 $$
 
 이다.
@@ -1213,7 +1060,7 @@ $$
 
 <br>
 
-> ## **2-16) Python으로 다중 Layer Backpropagation 구현**
+## 2-16) Python으로 다중 Layer Backpropagation 구현
 
 [ Python : code ] "두 개의 Affine Layer에서 Gradient를 뒤쪽에서 앞쪽으로 전달하는 방법"
 
@@ -1233,7 +1080,6 @@ b2 = 0.0
 # --------------------
 # Forward
 # --------------------
-
 a = w1 * x + b1
 y_pred = w2 * a + b2
 
@@ -1281,7 +1127,7 @@ b2 Gradient: -4.0
 
 <br>
 
-> ## **2-17) 복잡한 코드 흐름도**
+## 2-17) 복잡한 코드 흐름도
 
 ```text
 [ Forward ]
@@ -1330,7 +1176,7 @@ dL/da
 
 <br>
 
-> ## **2-18) Branch가 있는 계산 그래프**
+## 2-18) Branch가 있는 계산 그래프
 
 지금까지는 하나의 경로만 있는 모델을 다뤘다.
 
@@ -1349,15 +1195,7 @@ x
 즉,
 
 $$
-\frac{\partial L}{\partial x}
-=
-\left(
-\frac{\partial L}{\partial x}
-\right)_1
-+
-\left(
-\frac{\partial L}{\partial x}
-\right)_2
+\frac{\partial L}{\partial x} = \left( \frac{\partial L}{\partial x} \right)_1 + \left( \frac{\partial L}{\partial x} \right)_2
 $$
 
 이다.
@@ -1371,14 +1209,13 @@ $$
 
 으로 이해할 수 있다.
 
-
 <br><br>
 
 ---
 
-# **3. 신경망의 역전파와 Gradient 계산**
+# 3. 신경망의 역전파와 Gradient 계산
 
-> ## **3-1) 이진 분류 Neural Network**
+## 3-1) 이진 분류 Neural Network
 
 이번에는 회귀가 아니라 이진 분류를 생각한다.
 
@@ -1416,7 +1253,7 @@ Loss
 
 <br>
 
-> ## **3-2) Logit**
+## 3-2) Logit
 
 Logit은 확률 변환 함수를 적용하기 전의 점수이다.
 
@@ -1435,11 +1272,7 @@ b = 0
 이면
 
 $$
-z
-=
-0.5\times2
-=
-1
+z = 0.5\times2 = 1
 $$
 
 이다.
@@ -1448,25 +1281,18 @@ Logit은 확률이 아니므로 음수나 1보다 큰 값도 가질 수 있다.
 
 <br>
 
-> ## **3-3) Sigmoid**
+## 3-3) Sigmoid
 
 Sigmoid는 Logit을 `0~1` 범위로 변환한다.
 
 $$
-\sigma(z)
-=
-\frac{1}
-{1+e^{-z}}
+\sigma(z) = \frac{1}{1+e^{-z}}
 $$
 
 `z=1`이면
 
 $$
-p
-=
-\sigma(1)
-\approx
-0.731
+p = \sigma(1) \approx 0.731
 $$
 
 이다.
@@ -1475,19 +1301,12 @@ $$
 
 <br>
 
-> ## **3-4) Binary Cross Entropy**
+## 3-4) Binary Cross Entropy
 
 BCE는 다음과 같다.
 
 $$
-L
-=
--
-\left[
-y\log(p)
-+
-(1-y)\log(1-p)
-\right]
+L = - \left[ y\log(p) + (1-y)\log(1-p) \right]
 $$
 
 실제 정답이
@@ -1499,9 +1318,7 @@ y = 1
 이면 식은
 
 $$
-L
-=
--\log(p)
+L = -\log(p)
 $$
 
 가 된다.
@@ -1509,16 +1326,14 @@ $$
 현재 `p≈0.731`이므로
 
 $$
-L
-\approx
-0.313
+L \approx 0.313
 $$
 
 이다.
 
 <br>
 
-> ## **3-5) Sigmoid와 BCE의 Chain Rule**
+## 3-5) Sigmoid와 BCE의 Chain Rule
 
 계산 구조는
 
@@ -1535,11 +1350,7 @@ L = BCE(y, p)
 따라서
 
 $$
-\frac{\partial L}{\partial z}
-=
-\frac{\partial L}{\partial p}
-\times
-\frac{\partial p}{\partial z}
+\frac{\partial L}{\partial z} = \frac{\partial L}{\partial p} \times \frac{\partial p}{\partial z}
 $$
 
 이다.
@@ -1547,12 +1358,7 @@ $$
 BCE를 `p`에 대해 미분하면
 
 $$
-\frac{\partial L}{\partial p}
-=
--
-\frac{y}{p}
-+
-\frac{1-y}{1-p}
+\frac{\partial L}{\partial p} = - \frac{y}{p} + \frac{1-y}{1-p}
 $$
 
 이다.
@@ -1560,9 +1366,7 @@ $$
 Sigmoid의 미분은
 
 $$
-\frac{\partial p}{\partial z}
-=
-p(1-p)
+\frac{\partial p}{\partial z} = p(1-p)
 $$
 
 이다.
@@ -1570,11 +1374,7 @@ $$
 두 값을 곱하여 정리하면
 
 $$
-\boxed{
-\frac{\partial L}{\partial z}
-=
-p-y
-}
+\boxed{\frac{\partial L}{\partial z} = p-y}
 $$
 
 가 된다.
@@ -1583,7 +1383,7 @@ $$
 
 <br>
 
-> ## **3-6) 실제 숫자로 Logit Gradient 계산**
+## 3-6) 실제 숫자로 Logit Gradient 계산
 
 현재
 
@@ -1595,14 +1395,11 @@ y = 1
 이므로
 
 $$
-\frac{\partial L}{\partial z}
-=
-0.731-1
+\frac{\partial L}{\partial z} = 0.731-1
 $$
 
 $$
-\approx
--0.269
+\approx -0.269
 $$
 
 이다.
@@ -1613,7 +1410,7 @@ Gradient가 음수라는 것은 현재 지점에서 `z`를 증가시키는 방�
 
 <br>
 
-> ## **3-7) Weight와 Bias Gradient**
+## 3-7) Weight와 Bias Gradient
 
 Logit은
 
@@ -1626,17 +1423,13 @@ z = wx + b
 따라서
 
 $$
-\frac{\partial z}{\partial w}
-=
-x
+\frac{\partial z}{\partial w} = x
 $$
 
 이고,
 
 $$
-\frac{\partial z}{\partial b}
-=
-1
+\frac{\partial z}{\partial b} = 1
 $$
 
 이다.
@@ -1644,16 +1437,11 @@ $$
 Weight Gradient는
 
 $$
-\frac{\partial L}{\partial w}
-=
-\frac{\partial L}{\partial z}
-\times
-\frac{\partial z}{\partial w}
+\frac{\partial L}{\partial w} = \frac{\partial L}{\partial z} \times \frac{\partial z}{\partial w}
 $$
 
 $$
-=
-(p-y)x
+= (p-y)x
 $$
 
 이다.
@@ -1661,14 +1449,11 @@ $$
 현재 `x=2`이므로
 
 $$
-\frac{\partial L}{\partial w}
-\approx
--0.269\times2
+\frac{\partial L}{\partial w} \approx -0.269\times2
 $$
 
 $$
-\approx
--0.538
+\approx -0.538
 $$
 
 이다.
@@ -1676,11 +1461,7 @@ $$
 Bias Gradient는
 
 $$
-\frac{\partial L}{\partial b}
-=
-p-y
-\approx
--0.269
+\frac{\partial L}{\partial b} = p-y \approx -0.269
 $$
 
 이다.
@@ -1692,7 +1473,7 @@ $$
 
 <br>
 
-> ## **3-8) GPS 고강도 활동 분류 Python 예제**
+## 3-8) GPS 고강도 활동 분류 Python 예제
 
 [ Python : code ] "Sigmoid와 BCE를 사용하는 이진 분류 모델의 Forward와 Backward"
 
@@ -1713,7 +1494,6 @@ b = 0.0
 # --------------------
 # Forward
 # --------------------
-
 z = w * x + b
 
 p = 1 / (1 + np.exp(-z))
@@ -1724,7 +1504,6 @@ loss = np.logaddexp(0, z) - y * z
 # --------------------
 # Backward
 # --------------------
-
 dL_dz = p - y
 
 dL_dw = dL_dz * x
@@ -1752,7 +1531,7 @@ dL/db: -0.269
 
 <br>
 
-> ## **3-9) 결과 흐름**
+## 3-9) 결과 흐름
 
 ```text
 x = 2
@@ -1784,7 +1563,7 @@ dL/dz = p-y
 
 <br>
 
-> ## **3-10) 은닉층이 있는 Neural Network**
+## 3-10) 은닉층이 있는 Neural Network
 
 이번에는 Hidden Layer를 추가한다.
 
@@ -1828,7 +1607,7 @@ Loss
 
 <br>
 
-> ## **3-11) Hidden Layer Forward**
+## 3-11) Hidden Layer Forward
 
 다음 값을 사용하자.
 
@@ -1844,11 +1623,7 @@ Loss
 첫 번째 Linear 결과는
 
 $$
-a
-=
-1\times2
-=
-2
+a = 1\times2 = 2
 $$
 
 이다.
@@ -1870,11 +1645,7 @@ h = 2
 출력 Layer의 Logit은
 
 $$
-z
-=
-0.5\times2
-=
-1
+z = 0.5\times2 = 1
 $$
 
 이다.
@@ -1895,22 +1666,18 @@ L ≈ 0.313
 
 <br>
 
-> ## **3-12) 출력 Layer Backpropagation**
+## 3-12) 출력 Layer Backpropagation
 
 먼저
 
 $$
-\frac{\partial L}{\partial z}
-=
-p-y
+\frac{\partial L}{\partial z} = p-y
 $$
 
 이므로
 
 $$
-\frac{\partial L}{\partial z}
-\approx
--0.269
+\frac{\partial L}{\partial z} \approx -0.269
 $$
 
 이다.
@@ -1918,20 +1685,15 @@ $$
 출력 Weight는
 
 $$
-\frac{\partial L}{\partial w_2}
-=
-\frac{\partial L}{\partial z}
-\times h
+\frac{\partial L}{\partial w_2} = \frac{\partial L}{\partial z} \times h
 $$
 
 $$
-=
--0.269\times2
+= -0.269\times2
 $$
 
 $$
-\approx
--0.538
+\approx -0.538
 $$
 
 이다.
@@ -1939,16 +1701,14 @@ $$
 Bias는
 
 $$
-\frac{\partial L}{\partial b_2}
-\approx
--0.269
+\frac{\partial L}{\partial b_2} \approx -0.269
 $$
 
 이다.
 
 <br>
 
-> ## **3-13) Hidden Layer로 Gradient 전달**
+## 3-13) Hidden Layer로 Gradient 전달
 
 출력 Layer는
 
@@ -1961,9 +1721,7 @@ z = w₂h + b₂
 따라서
 
 $$
-\frac{\partial z}{\partial h}
-=
-w_2
+\frac{\partial z}{\partial h} = w_2
 $$
 
 이다.
@@ -1971,21 +1729,15 @@ $$
 Chain Rule을 사용하면
 
 $$
-\frac{\partial L}{\partial h}
-=
-\frac{\partial L}{\partial z}
-\times
-w_2
+\frac{\partial L}{\partial h} = \frac{\partial L}{\partial z} \times w_2
 $$
 
 $$
-=
--0.269\times0.5
+= -0.269\times0.5
 $$
 
 $$
-\approx
--0.134
+\approx -0.134
 $$
 
 이다.
@@ -1994,14 +1746,12 @@ $$
 
 <br>
 
-> ## **3-14) ReLU Gradient**
+## 3-14) ReLU Gradient
 
 ReLU는
 
 $$
-ReLU(a)
-=
-\max(0,a)
+ReLU(a) = \max(0,a)
 $$
 
 이다.
@@ -2009,8 +1759,7 @@ $$
 도함수는 일반적으로
 
 $$
-ReLU'(a)
-=
+ReLU'(a) =
 \begin{cases}
 1, & a>0 \\
 0, & a<0
@@ -2024,15 +1773,11 @@ $$
 따라서
 
 $$
-\frac{\partial L}{\partial a}
-=
-\frac{\partial L}{\partial h}
-\times1
+\frac{\partial L}{\partial a} = \frac{\partial L}{\partial h} \times1
 $$
 
 $$
-\approx
--0.134
+\approx -0.134
 $$
 
 이다.
@@ -2041,7 +1786,7 @@ $$
 
 <br>
 
-> ## **3-15) 첫 번째 Layer Gradient**
+## 3-15) 첫 번째 Layer Gradient
 
 첫 번째 Layer는
 
@@ -2054,20 +1799,15 @@ a = w₁x + b₁
 따라서
 
 $$
-\frac{\partial L}{\partial w_1}
-=
-\frac{\partial L}{\partial a}
-\times x
+\frac{\partial L}{\partial w_1} = \frac{\partial L}{\partial a} \times x
 $$
 
 $$
-=
--0.134\times2
+= -0.134\times2
 $$
 
 $$
-\approx
--0.269
+\approx -0.269
 $$
 
 이다.
@@ -2075,9 +1815,7 @@ $$
 Bias Gradient는
 
 $$
-\frac{\partial L}{\partial b_1}
-\approx
--0.134
+\frac{\partial L}{\partial b_1} \approx -0.134
 $$
 
 이다.
@@ -2093,7 +1831,7 @@ $$
 
 <br>
 
-> ## **3-16) Python으로 Hidden Layer Backpropagation 구현**
+## 3-16) Python으로 Hidden Layer Backpropagation 구현
 
 [ Python : code ] "ReLU 은닉층과 Sigmoid 출력층을 가진 신경망의 역전파"
 
@@ -2124,7 +1862,6 @@ b2 = 0.0
 # --------------------
 # Forward
 # --------------------
-
 a = w1 * x + b1
 h = relu(a)
 
@@ -2136,7 +1873,6 @@ loss = np.logaddexp(0, z) - y * z
 # --------------------
 # Backward: Output
 # --------------------
-
 dL_dz = p - y
 
 dL_dw2 = dL_dz * h
@@ -2145,7 +1881,6 @@ dL_db2 = dL_dz
 # --------------------
 # Backward: Hidden
 # --------------------
-
 dL_dh = dL_dz * w2
 
 relu_grad = (1.0 if a > 0 else 0.0)
@@ -2183,7 +1918,7 @@ b2 Gradient: -0.269
 
 <br>
 
-> ## **3-17) 코드 결과 흐름도**
+## 3-17) 코드 결과 흐름도
 
 ```text
 [ Forward ]
@@ -2236,7 +1971,7 @@ Hidden Layer
 
 <br>
 
-> ## **3-18) ReLU가 Gradient 전달에 미치는 영향**
+## 3-18) ReLU가 Gradient 전달에 미치는 영향
 
 ReLU 입력이 양수이면
 
@@ -2264,7 +1999,7 @@ ReLU'(a) = 0
 
 <br>
 
-> ## **3-19) Forward와 Backward에서 저장해야 하는 값**
+## 3-19) Forward와 Backward에서 저장해야 하는 값
 
 Backward를 계산하기 위해 Forward 단계의 일부 값이 필요하다.
 
@@ -2289,7 +2024,7 @@ dL/dw₂ = dL/dz × h
 
 <br>
 
-> ## **3-20) Computational Graph**
+## 3-20) Computational Graph
 
 신경망의 연산 관계를 그래프로 표현한 것을 Computational Graph라고 한다.
 
@@ -2320,7 +2055,7 @@ Backward에서는 Graph를 반대 방향으로 따라가며 Gradient를 계산�
 
 <br>
 
-> ## **3-21) Automatic Differentiation**
+## 3-21) Automatic Differentiation
 
 실제 DNN에는 수많은 Parameter가 존재한다.
 
@@ -2342,7 +2077,7 @@ PyTorch와 같은 Framework는 각 연산의 미분 규칙을 알고 있으며 C
 
 <br>
 
-> ## **3-22) PyTorch Autograd로 Gradient 확인**
+## 3-22) PyTorch Autograd로 Gradient 확인
 
 [ Python : code ] "PyTorch Autograd를 이용한 Hidden Layer Gradient 자동 계산"
 
@@ -2363,7 +2098,6 @@ b2 = torch.tensor(0.0, requires_grad=True)
 # --------------------
 # Forward
 # --------------------
-
 a = w1 * x + b1
 h = torch.relu(a)
 
@@ -2374,7 +2108,6 @@ loss = torch.nn.functional.binary_cross_entropy_with_logits(z, y)
 # --------------------
 # Backward
 # --------------------
-
 loss.backward()
 
 print(
@@ -2427,7 +2160,7 @@ Autograd가 자동 수행한 Chain Rule
 
 <br>
 
-> ## **3-23) Backpropagation과 Autograd의 관계**
+## 3-23) Backpropagation과 Autograd의 관계
 
 두 개념은 동일한 용어가 아니다.
 
@@ -2451,7 +2184,7 @@ Autograd로 자동 수행
 
 <br>
 
-> ## **3-24) 전체 학습 과정과 연결**
+## 3-24) 전체 학습 과정과 연결
 
 실제 Neural Network Training은 다음 순서로 반복된다.
 
@@ -2481,7 +2214,7 @@ Autograd로 자동 수행
 
 <br>
 
-> ## **3-25) Parameter Update Python 예제**
+## 3-25) Parameter Update Python 예제
 
 [ Python : code ] "Backpropagation으로 계산한 Gradient를 이용한 한 번의 Gradient Descent 업데이트"
 
@@ -2531,7 +2264,7 @@ Gradient Descent
 
 <br>
 
-> ## **3-26) 실무 학습 Loop의 핵심**
+## 3-26) 실무 학습 Loop의 핵심
 
 PyTorch 학습 코드에서는 일반적으로 다음 구조를 반복한다.
 
@@ -2572,14 +2305,13 @@ Gradient 초기화
 
 이 구조는 이후 CNN, RNN, Transformer를 포함한 대부분의 Neural Network Training에서 공통적으로 사용된다.
 
-
 <br><br>
 
 ---
 
-# **4. Advanced 추가 학습**
+# 4. Advanced 추가 학습
 
-> ## **4-1) Vector와 Matrix의 Chain Rule**
+## 4-1) Vector와 Matrix의 Chain Rule
 
 실제 Neural Network에서는 Scalar가 아니라 Vector와 Matrix를 사용한다.
 
@@ -2616,7 +2348,7 @@ z : Matrix
 
 <br>
 
-> ## **4-2) Jacobian**
+## 4-2) Jacobian
 
 Vector를 Vector에 대해 미분하면 하나의 숫자가 아니라 여러 편미분을 포함하는 Matrix가 필요할 수 있다.
 
@@ -2634,20 +2366,14 @@ y = f(x)
 
 <br>
 
-> ## **4-3) Numerical Gradient와 Gradient Check**
+## 4-3) Numerical Gradient와 Gradient Check
 
 Gradient가 올바르게 계산되었는지 확인하기 위해 수치 미분과 비교할 수 있다.
 
 중앙 차분은 다음과 같다.
 
 $$
-f'(x)
-\approx
-\frac{
-f(x+h)-f(x-h)
-}{
-2h
-}
+f'(x) \approx \frac{f(x+h)-f(x-h)}{2h}
 $$
 
 이를 Analytical Gradient와 비교하는 과정을 Gradient Checking이라고 한다.
@@ -2656,7 +2382,7 @@ $$
 
 <br>
 
-> ## **4-4) Sigmoid + BCEWithLogitsLoss**
+## 4-4) Sigmoid + BCEWithLogitsLoss
 
 실제 PyTorch에서는
 
@@ -2693,12 +2419,11 @@ torch.sigmoid(logits)
 
 를 별도로 적용할 수 있다.
 
-
 <br><br>
 
 ---
 
-# **5. 핵심정리**
+# 5. 핵심정리
 
 1. 합성함수는 한 함수의 출력이 다른 함수의 입력으로 사용되는 구조이다.
 
@@ -2709,11 +2434,7 @@ torch.sigmoid(logits)
 4. Chain Rule의 기본 형태는 다음과 같다.
 
 $$
-\frac{df}{dx}
-=
-\frac{df}{dz}
-\times
-\frac{dz}{dx}
+\frac{df}{dx} = \frac{df}{dz} \times \frac{dz}{dx}
 $$
 
 5. 각 연산 하나에서 계산되는 미분값을 Local Derivative라고 이해할 수 있다.
@@ -2742,21 +2463,13 @@ L = (y - ŷ)²
 에서는 다음 Chain Rule을 사용할 수 있다.
 
 $$
-\frac{\partial L}{\partial w}
-=
-\frac{\partial L}{\partial \hat{y}}
-\times
-\frac{\partial \hat{y}}{\partial w}
+\frac{\partial L}{\partial w} = \frac{\partial L}{\partial \hat{y}} \times \frac{\partial \hat{y}}{\partial w}
 $$
 
 14. 같은 모델에서 Bias Gradient는 다음과 같다.
 
 $$
-\frac{\partial L}{\partial b}
-=
-\frac{\partial L}{\partial \hat{y}}
-\times
-\frac{\partial \hat{y}}{\partial b}
+\frac{\partial L}{\partial b} = \frac{\partial L}{\partial \hat{y}} \times \frac{\partial \hat{y}}{\partial b}
 $$
 
 15. 여러 Layer가 연결된 Neural Network에서는 출력 Layer의 Gradient를 먼저 계산한다.
@@ -2772,12 +2485,7 @@ $$
 20. Gradient Descent의 기본 Parameter Update는 다음과 같다.
 
 $$
-\theta_{new}
-=
-\theta_{old}
--
-\eta
-\frac{\partial L}{\partial\theta}
+\theta_{new} = \theta_{old} - \eta \frac{\partial L}{\partial\theta}
 $$
 
 21. Gradient가 음수이면 Gradient Descent 업데이트에서는 해당 Parameter가 증가하는 방향으로 이동할 수 있다.
@@ -2799,57 +2507,37 @@ L = BCE(y, p)
 26. Sigmoid는 다음과 같다.
 
 $$
-\sigma(z)
-=
-\frac{1}
-{1+e^{-z}}
+\sigma(z) = \frac{1}{1+e^{-z}}
 $$
 
 27. Sigmoid의 미분은 다음과 같다.
 
 $$
-\sigma'(z)
-=
-p(1-p)
+\sigma'(z) = p(1-p)
 $$
 
 28. Binary Cross Entropy는 다음과 같다.
 
 $$
-L
-=
--
-\left[
-y\log p
-+
-(1-y)\log(1-p)
-\right]
+L = - \left[ y\log p + (1-y)\log(1-p) \right]
 $$
 
 29. Sigmoid와 BCE를 연결하여 Chain Rule을 적용하면 다음과 같이 정리된다.
 
 $$
-\boxed{
-\frac{\partial L}{\partial z}
-=
-p-y
-}
+\boxed{\frac{\partial L}{\partial z} = p-y}
 $$
 
 30. 따라서 Logistic 형태의 단일 Weight 모델에서는 다음과 같다.
 
 $$
-\frac{\partial L}{\partial w}
-=
-(p-y)x
+\frac{\partial L}{\partial w} = (p-y)x
 $$
 
 31. Bias Gradient는 다음과 같다.
 
 $$
-\frac{\partial L}{\partial b}
-=
-p-y
+\frac{\partial L}{\partial b} = p-y
 $$
 
 32. `p-y`는 Sigmoid와 BCE가 결합된 경우의 Logit Gradient이다.

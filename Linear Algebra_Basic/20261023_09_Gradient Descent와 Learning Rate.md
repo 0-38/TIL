@@ -1,8 +1,8 @@
-# **[09. Gradient Descent와 Learning Rate]**
+# [09. Gradient Descent와 Learning Rate]
 
 <br>
 
-# **1. Gradient Descent를 왜 사용하는가?**
+# 1. Gradient Descent를 왜 사용하는가?
 
 앞에서 학습한 과정은 다음과 같다.
 
@@ -56,16 +56,14 @@ Parameter Update
 
 ---
 
-# **2. Gradient Descent의 핵심 원리**
+# 2. Gradient Descent의 핵심 원리
 
 **Gradient**는 현재 지점에서 함수값이 가장 빠르게 증가하는 국소적인 방향을 나타낸다.
 
 > **경사하강법에서 기울기의 의미**
 
-- 현재 위치에서 함수값이 얼마나 빠르게 증가하는지 나타낸다.   
-
+- 현재 위치에서 함수값이 얼마나 빠르게 증가하는지 나타낸다.
 - 함수값이 증가하는 방향을 나타내므로 기울기는 아래에서 위쪽 방향으로 향하는 것으로 정의가 된다.
-
 - 기울기는 손실이 커지는 방향을 알려준다.
 
 따라서 Loss를 감소시키려면 일반적으로 Gradient의 반대 방향으로 이동한다.
@@ -94,32 +92,26 @@ $$
 | 6 | 1 | 2 | `w` 감소 |
 | 8 | 9 | 6 | `w` 감소 |
 
-Gradient가 음수라면 Parameter를 증가시키는 방향이 Loss 감소 방향이고,    
+Gradient가 음수라면 Parameter를 증가시키는 방향이 Loss 감소 방향이고,
+
 Gradient가 양수라면 Parameter를 감소시키는 방향이 된다.
 
 <br><br>
 
 ---
 
-# **3. Gradient Descent의 Parameter Update 공식**
+# 3. Gradient Descent의 Parameter Update 공식
 
 기본 업데이트 공식은 다음과 같다.
 
 $$
-\theta_{new}
-=
-\theta_{old}
--
-\alpha
-\nabla L(\theta_{old})
+\theta_{new} = \theta_{old} - \alpha \nabla L(\theta_{old})
 $$
 
 여기서
 
 - `θ`: Model Parameter
-
 - `α`: Learning Rate
-
 - `∇L`: Loss의 Gradient
 
 이다.
@@ -127,23 +119,13 @@ $$
 가중치 하나라면
 
 $$
-w_{new}
-=
-w_{old}
--
-\alpha
-\frac{\partial L}{\partial w}
+w_{new} = w_{old} - \alpha \frac{\partial L}{\partial w}
 $$
 
 편향은
 
 $$
-b_{new}
-=
-b_{old}
--
-\alpha
-\frac{\partial L}{\partial b}
+b_{new} = b_{old} - \alpha \frac{\partial L}{\partial b}
 $$
 
 로 업데이트한다.
@@ -161,7 +143,7 @@ Gradient
 
 ---
 
-# **4. Gradient의 부호와 Parameter 변화**
+# 4. Gradient의 부호와 Parameter 변화
 
 Learning Rate를 양수라고 가정하면 다음과 같이 해석할 수 있다.
 
@@ -176,11 +158,8 @@ Learning Rate를 양수라고 가정하면 다음과 같이 해석할 수 있다
 다음과 같은 경우에도 Gradient가 0일 수 있다.
 
 - Local Minimum
-
 - Local Maximum
-
 - Saddle Point
-
 - 평평한 영역
 
 따라서 Gradient 값만으로 최적해를 완전히 판단할 수는 없다.
@@ -189,7 +168,7 @@ Learning Rate를 양수라고 가정하면 다음과 같이 해석할 수 있다
 
 ---
 
-# **5. 스포츠 회귀 모델에서 한 번의 Gradient Descent**
+# 5. 스포츠 회귀 모델에서 한 번의 Gradient Descent
 
 GPS Training Load를 이용하여 다음날 선수의 Fatigue Score를 예측하는 간단한 Regression Model을 생각하자.
 
@@ -211,11 +190,7 @@ b = 1
 Prediction은
 
 $$
-\hat y
-=
-3\times2+1
-=
-7
+\hat y = 3\times2+1 = 7
 $$
 
 이다.
@@ -237,26 +212,17 @@ $$
 Gradient는
 
 $$
-\frac{\partial L}{\partial w}
-=
-2(\hat y-y)x
+\frac{\partial L}{\partial w} = 2(\hat y-y)x
 $$
 
 $$
-=
-2(7-10)\times2
-=
--12
+= 2(7-10)\times2 = -12
 $$
 
 이고
 
 $$
-\frac{\partial L}{\partial b}
-=
-2(\hat y-y)
-=
--6
+\frac{\partial L}{\partial b} = 2(\hat y-y) = -6
 $$
 
 이다.
@@ -273,7 +239,7 @@ Gradient = [-12, -6]
 
 ---
 
-# **6. Learning Rate를 적용한 Parameter Update**
+# 6. Learning Rate를 적용한 Parameter Update
 
 Learning Rate를
 
@@ -286,11 +252,7 @@ Learning Rate를
 가중치는
 
 $$
-w_{new}
-=
-3-0.05(-12)
-=
-3.6
+w_{new} = 3-0.05(-12) = 3.6
 $$
 
 이다.
@@ -298,11 +260,7 @@ $$
 편향은
 
 $$
-b_{new}
-=
-1-0.05(-6)
-=
-1.3
+b_{new} = 1-0.05(-6) = 1.3
 $$
 
 이다.
@@ -310,19 +268,13 @@ $$
 새로운 Prediction은
 
 $$
-\hat y
-=
-3.6\times2+1.3
-=
-8.5
+\hat y = 3.6\times2+1.3 = 8.5
 $$
 
 이고 Loss는
 
 $$
-L=(10-8.5)^2
-=
-2.25
+L=(10-8.5)^2 = 2.25
 $$
 
 이다.
@@ -340,7 +292,7 @@ Gradient를 한 번 적용한 결과 Loss가 감소하였다.
 
 ---
 
-# **7. Gradient Descent는 반복해서 수행한다**
+# 7. Gradient Descent는 반복해서 수행한다
 
 한 번 Parameter를 Update했다고 Training이 끝나는 것은 아니다.
 
@@ -366,19 +318,11 @@ b = 1.3
 따라서 새로운 Gradient는
 
 $$
-\frac{\partial L}{\partial w}
-=
-2(8.5-10)\times2
-=
--6
+\frac{\partial L}{\partial w} = 2(8.5-10)\times2 = -6
 $$
 
 $$
-\frac{\partial L}{\partial b}
-=
-2(8.5-10)
-=
--3
+\frac{\partial L}{\partial b} = 2(8.5-10) = -3
 $$
 
 이다.
@@ -386,19 +330,11 @@ $$
 두 번째 Update는
 
 $$
-w
-=
-3.6-0.05(-6)
-=
-3.9
+w = 3.6-0.05(-6) = 3.9
 $$
 
 $$
-b
-=
-1.3-0.05(-3)
-=
-1.45
+b = 1.3-0.05(-3) = 1.45
 $$
 
 이다.
@@ -406,19 +342,13 @@ $$
 새로운 Prediction은
 
 $$
-\hat y
-=
-3.9\times2+1.45
-=
-9.25
+\hat y = 3.9\times2+1.45 = 9.25
 $$
 
 이며
 
 $$
-L=(10-9.25)^2
-=
-0.5625
+L=(10-9.25)^2 = 0.5625
 $$
 
 이다.
@@ -445,7 +375,7 @@ $$
 
 ---
 
-# **8. NumPy로 반복 Gradient Descent 구현하기**
+# 8. NumPy로 반복 Gradient Descent 구현하기
 
 [ Python : code ] "선수 Fatigue Score 회귀 모델의 반복 Gradient Descent"
 
@@ -520,7 +450,7 @@ Loss가 반복적으로 감소하는 것을 확인할 수 있다.
 
 ---
 
-# **9. 반복 학습 코드의 흐름도**
+# 9. 반복 학습 코드의 흐름도
 
 앞의 코드는 다음 순서로 동작한다.
 
@@ -558,7 +488,7 @@ Loss가 반복적으로 감소하는 것을 확인할 수 있다.
 
 ---
 
-# **10. Forward·Backpropagation·Gradient Descent 비교**
+# 10. Forward·Backpropagation·Gradient Descent 비교
 
 | 과정 | 역할 | 결과 |
 | --- | --- | --- |
@@ -583,18 +513,14 @@ Backpropagation은 **Gradient를 구하는 알고리즘**이고 Gradient Descent
 
 ---
 
-# **11. Learning Rate란 무엇인가?**
+# 11. Learning Rate란 무엇인가?
 
 Learning Rate는 Parameter를 한 번 Update할 때 얼마나 이동할지를 조절하는 Hyperparameter이다.
 
 업데이트 공식은
 
 $$
-\theta_{new}
-=
-\theta_{old}
--
-\alpha\nabla L
+\theta_{new} = \theta_{old} - \alpha\nabla L
 $$
 
 이다.
@@ -602,9 +528,7 @@ $$
 따라서 실제 Parameter 변화량은
 
 $$
-\Delta\theta
-=
--\alpha\nabla L
+\Delta\theta = -\alpha\nabla L
 $$
 
 이다.
@@ -612,9 +536,7 @@ $$
 즉 업데이트 크기는 Learning Rate만으로 결정되지 않는다.
 
 $$
-|\Delta\theta|
-=
-|\alpha\nabla L|
+|\Delta\theta| = |\alpha\nabla L|
 $$
 
 이므로 Gradient의 크기도 함께 영향을 준다.
@@ -623,7 +545,7 @@ $$
 
 ---
 
-# **12. Learning Rate가 작은 경우**
+# 12. Learning Rate가 작은 경우
 
 다음 Loss Function을 사용하자.
 
@@ -658,11 +580,7 @@ $$
 Learning Rate가 `0.01`이라면
 
 $$
-w_{new}
-=
-3-0.01(-16)
-=
-3.16
+w_{new} = 3-0.01(-16) = 3.16
 $$
 
 이다.
@@ -670,9 +588,7 @@ $$
 Loss는
 
 $$
-(10-2(3.16))^2
-=
-13.5424
+(10-2(3.16))^2 = 13.5424
 $$
 
 이다.
@@ -682,16 +598,14 @@ $$
 Learning Rate가 지나치게 작으면
 
 - Training이 느려질 수 있고
-
 - 많은 Iteration이 필요하며
-
 - 제한된 Epoch에서는 충분히 학습되지 못할 수 있다.
 
 <br><br>
 
 ---
 
-# **13. 적절한 Learning Rate**
+# 13. 적절한 Learning Rate
 
 같은 조건에서
 
@@ -704,11 +618,7 @@ Learning Rate = 0.05
 첫 Update는
 
 $$
-w
-=
-3-0.05(-16)
-=
-3.8
+w = 3-0.05(-16) = 3.8
 $$
 
 이다.
@@ -724,9 +634,7 @@ $$
 다시 Gradient를 계산하면
 
 $$
-8(3.8)-40
-=
--9.6
+8(3.8)-40 = -9.6
 $$
 
 이다.
@@ -734,11 +642,7 @@ $$
 두 번째 Update는
 
 $$
-w
-=
-3.8-0.05(-9.6)
-=
-4.28
+w = 3.8-0.05(-9.6) = 4.28
 $$
 
 이고 Loss는
@@ -761,7 +665,7 @@ $$
 
 ---
 
-# **14. Overshooting(오버슈팅)**
+# 14. Overshooting(오버슈팅)
 
 Learning Rate가 커지면 Parameter가 Minimum을 지나 반대쪽으로 이동할 수 있다.
 
@@ -778,11 +682,7 @@ Learning Rate = 0.20
 이면
 
 $$
-w
-=
-3-0.2(-16)
-=
-6.2
+w = 3-0.2(-16) = 6.2
 $$
 
 이다.
@@ -798,9 +698,7 @@ w = 5
 하지만 Loss는
 
 $$
-L(6.2)
-=
-5.76
+L(6.2) = 5.76
 $$
 
 이다.
@@ -817,7 +715,7 @@ Minimum을 지나갔더라도 이전 위치보다 좋은 위치에 도달할 수
 
 ---
 
-# **15. Oscillation(진동)**
+# 15. Oscillation(진동)
 
 Learning Rate가 더 커지면 Minimum 주변을 반복적으로 오갈 수 있다.
 
@@ -838,11 +736,7 @@ w = 3
 에서
 
 $$
-w_{new}
-=
-3-0.25(-16)
-=
-7
+w_{new} = 3-0.25(-16) = 7
 $$
 
 이다.
@@ -858,9 +752,7 @@ $$
 다음 Update는
 
 $$
-7-0.25(16)
-=
-3
+7-0.25(16) = 3
 $$
 
 이다.
@@ -887,7 +779,7 @@ Minimum에 접근하지 못하고 주변을 반복해서 오가는 현상을 **O
 
 ---
 
-# **16. Divergence(발산)**
+# 16. Divergence(발산)
 
 Learning Rate가 지나치게 크면 Loss가 점점 증가할 수 있다.
 
@@ -914,7 +806,7 @@ Parameter가 Minimum에서 점점 멀어지고 Loss도 증가한다.
 
 ---
 
-# **17. Learning Rate에 따른 차이**
+# 17. Learning Rate에 따른 차이
 
 | Learning Rate | Training 특성 |
 | --- | --- |
@@ -938,7 +830,7 @@ Learning Rate가 크다
 
 ---
 
-# **18. Learning Rate 표기법**
+# 18. Learning Rate 표기법
 
 Machine Learning에서는 작은 Learning Rate를 Scientific Notation으로 자주 표현한다.
 
@@ -970,7 +862,7 @@ learning_rate = 0.00005
 
 ---
 
-# **19. Learning Rate별 Loss를 NumPy로 비교하기**
+# 19. Learning Rate별 Loss를 NumPy로 비교하기
 
 [ Python : code ] "서로 다른 Learning Rate에서 Gradient Descent의 안정성 비교"
 
@@ -1040,7 +932,7 @@ LR=0.30: [ 16.      31.36    61.4656 120.4726]
 
 ---
 
-# **20. Feature Scale도 Gradient에 영향을 준다**
+# 20. Feature Scale도 Gradient에 영향을 준다
 
 실무 데이터에서는 Feature Scale이 매우 다를 수 있다.
 
@@ -1060,9 +952,7 @@ Scale 차이가 매우 크면 Parameter별 Gradient 크기도 크게 달라질 �
 따라서 실제 Model에서는
 
 - Standardization
-
 - Normalization
-
 - 적절한 Initialization
 
 등이 Optimization Stability에 영향을 줄 수 있다.
@@ -1070,22 +960,19 @@ Scale 차이가 매우 크면 Parameter별 Gradient 크기도 크게 달라질 �
 <br><br>
 
 ---
+
 # 경사하강법의 종류
 
 <br>
 
-# **21. Batch Gradient Descent <br> (배치 경사하강법)**
+# 21. Batch Gradient Descent <br> (배치 경사하강법)
 
 Training Sample이 `N`개라고 하자.
 
 Batch Gradient Descent는 **전체 Training Dataset을 사용해서 한 번의 Gradient를 계산**한다.
 
 $$
-\nabla L
-=
-\frac{1}{N}
-\sum_{i=1}^{N}
-\nabla L_i
+\nabla L = \frac{1}{N} \sum_{i=1}^{N} \nabla L_i
 $$
 
 이다.
@@ -1109,21 +996,16 @@ Parameter Update 1번
 하지만 Dataset이 매우 크면
 
 - Memory 사용량 증가
-
 - Update까지 시간이 오래 걸림
-
 - 대규모 Neural Network에서 비효율적일 수 있음
 
 등의 문제가 발생할 수 있다.
-
-
-
 
 <br><br>
 
 ---
 
-# **22. Stochastic Gradient Descent(SGD) <br> (확률적 경사하강법)**
+# 22. Stochastic Gradient Descent(SGD) <br> (확률적 경사하강법)
 
 이론적인 SGD는 Sample 하나를 이용하여 Gradient를 계산하고 바로 Parameter를 Update한다.
 
@@ -1149,7 +1031,6 @@ Gradient는 개별 Sample에 크게 영향을 받기 때문에 Update 방향의 
 장점은
 
 - 빠르게 Update 가능
-
 - Memory 사용량이 작음
 
 등이 있다.
@@ -1157,7 +1038,6 @@ Gradient는 개별 Sample에 크게 영향을 받기 때문에 Update 방향의 
 반면
 
 - Gradient Noise가 큼
-
 - Loss가 많이 흔들릴 수 있음
 
 등의 특징이 있다.
@@ -1166,7 +1046,7 @@ Gradient는 개별 Sample에 크게 영향을 받기 때문에 Update 방향의 
 
 ---
 
-# **23. Mini-Batch Gradient Descent <br> (미니 배치 경사하강법)**
+# 23. Mini-Batch Gradient Descent <br> (미니 배치 경사하강법)
 
 Mini-Batch Gradient Descent는 여러 Sample을 작은 묶음으로 만들어 Gradient를 계산한다.
 
@@ -1210,7 +1090,7 @@ Update
 
 ---
 
-# **24. Batch GD·SGD·Mini-Batch GD 비교**
+# 24. Batch GD·SGD·Mini-Batch GD 비교
 
 | 구분 | **Batch GD** | **SGD** | **Mini-Batch** |
 | --- | --- | --- | --- |
@@ -1225,39 +1105,37 @@ Update
 
 즉 이름이 SGD라고 해서 반드시 Batch Size가 1이라는 뜻으로 사용되는 것은 아니다.
 
+> **예제 :**
 
-> **예제 :**   
 > 학생 1,000명의 데이터를 이용해서 합격 여부를 예측하는 DNN을 학습한다고 가정해본다.
 
-> **1. 배치 경사하강법(Batch GD)**   
-- 1,000명의 데이터를 모두 사용하여 평균 기울기를 계산하고 가중치를 1번 업데이트함.
+> **1. 배치 경사하강법(Batch GD)**
 
-- 장점 : 업데이트가 안정적인 편   
+- 1,000명의 데이터를 모두 사용하여 평균 기울기를 계산하고 가중치를 1번 업데이트함.
+- 장점 : 업데이트가 안정적인 편
 - 단점 : 데이터가 많으면 계산과 메모리 부담이 큼
 
 > **2. 확률적 경사하강법**
-- 학생 1명의 데이터로 기울기를 계산하고 가중치를 한 번 업데이트한다.
 
-- 특징 :   
-        - 업데이트가 매우 빈번함   
-        - 기울기의 변동이 커서 진동할 수 있음
+- 학생 1명의 데이터로 기울기를 계산하고 가중치를 한 번 업데이트한다.
+- 특징 :
+    - 업데이트가 매우 빈번함
+    - 기울기의 변동이 커서 진동할 수 있음
 
 > **3. 미니배치 경사하강법**
+
 - 학생 100명씩 묶어서 평균 기울기를 계산하고 업데이트한다.
-
-- 특징 :    
-        - 계산 효율과 안정성 사이의 균형   
-        - 주로 딥러닝에서 널리 사용하는 방식 
-
+- 특징 :
+    - 계산 효율과 안정성 사이의 균형
+    - 주로 딥러닝에서 널리 사용하는 방식
 
 <img src="https://blog.kakaocdn.net/dna/nigG1/btr1QyBOkoX/AAAAAAAAAAAAAAAAAAAAALDoVK6sstdmmoGxjJE7-I0AMtoXTQ7jSdApJTFIM--S/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1793458799&allow_ip=&allow_referer=&signature=Y2FdhsU9P1IeHTF6lC51iMmjtUM%3D" width="400">
-
 
 <br><br>
 
 ---
 
-# **25. 같은 Dataset이어도 Batch Size에 따라 Update 횟수가 달라진다**
+# 25. 같은 Dataset이어도 Batch Size에 따라 Update 횟수가 달라진다
 
 Training Dataset이
 
@@ -1289,7 +1167,7 @@ Batch Size가 32일 때는
 
 ---
 
-# **26. Epoch이란 무엇인가?**
+# 26. Epoch이란 무엇인가?
 
 Epoch은 **전체 Training Dataset을 한 번 학습에 사용한 상태**를 의미한다.
 
@@ -1311,7 +1189,7 @@ Epoch은 **전체 Training Dataset을 한 번 학습에 사용한 상태**를 �
 
 ---
 
-# **27. Iteration이란 무엇인가?**
+# 27. Iteration이란 무엇인가?
 
 Iteration은 **한 Batch에 대해 Parameter Update를 한 번 수행한 것**을 의미한다.
 
@@ -1337,16 +1215,12 @@ Parameter Update
 
 ---
 
-# **28. Epoch과 Iteration의 관계**
+# 28. Epoch과 Iteration의 관계
 
 마지막 Batch를 버리지 않는다고 가정하면
 
 $$
-Iterations\ per\ Epoch
-=
-\left\lceil
-\frac{N}{BatchSize}
-\right\rceil
+\text{Iterations per Epoch} = \left\lceil \frac{N}{BatchSize} \right\rceil
 $$
 
 이다.
@@ -1354,11 +1228,7 @@ $$
 전체 Training 동안 Update 횟수는
 
 $$
-Total\ Iterations
-=
-Epochs
-\times
-Iterations\ per\ Epoch
+\text{Total Iterations} = Epochs \times \text{Iterations per Epoch}
 $$
 
 이다.
@@ -1374,11 +1244,7 @@ Epoch = 10
 이면
 
 $$
-\left\lceil
-\frac{1000}{128}
-\right\rceil
-=
-8
+\left\lceil \frac{1000}{128} \right\rceil = 8
 $$
 
 이므로
@@ -1397,12 +1263,11 @@ $$
 
 <img src="https://blog.kakaocdn.net/dna/BHLeA/btsaJVbaFdA/AAAAAAAAAAAAAAAAAAAAAGKTsgvhzshvFL4UCBDK3kAsvKBWzcu0el52l_u0YZXX/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1793458799&allow_ip=&allow_referer=&signature=Uj7PmKFnNKBk0xR46s%2Fp59DOHes%3D" width="400">
 
-
 <br><br>
 
 ---
 
-# **29. Batch Size별 Iteration 계산**
+# 29. Batch Size별 Iteration 계산
 
 | Dataset | Batch Size | Iteration / Epoch |
 | ---: | ---: | ---: |
@@ -1421,7 +1286,7 @@ $$
 
 ---
 
-# **30. NumPy로 Iteration 수 계산하기**
+# 30. NumPy로 Iteration 수 계산하기
 
 [ Python : code ] "Dataset Size와 Batch Size에 따른 Iteration 계산"
 
@@ -1459,7 +1324,7 @@ Batch Size=128, Iterations=8
 
 ---
 
-# **31. 스포츠 GPS 데이터 Mini-Batch 학습 예제**
+# 31. 스포츠 GPS 데이터 Mini-Batch 학습 예제
 
 이번에는 선수 Training Load와 다음날 Fatigue Score의 관계를 간단한 Linear Regression으로 학습하자.
 
@@ -1493,16 +1358,12 @@ b = 5
 
 ---
 
-# **32. 전체 Dataset으로 Gradient 계산하기**
+# 32. 전체 Dataset으로 Gradient 계산하기
 
 MSE는
 
 $$
-MSE
-=
-\frac{1}{N}
-\sum_{i=1}^{N}
-(y_i-\hat y_i)^2
+MSE = \frac{1}{N} \sum_{i=1}^{N} (y_i-\hat y_i)^2
 $$
 
 이다.
@@ -1510,19 +1371,11 @@ $$
 Gradient는
 
 $$
-\frac{\partial L}{\partial w}
-=
-\frac{2}{N}
-\sum_{i=1}^{N}
-(\hat y_i-y_i)x_i
+\frac{\partial L}{\partial w} = \frac{2}{N} \sum_{i=1}^{N} (\hat y_i-y_i)x_i
 $$
 
 $$
-\frac{\partial L}{\partial b}
-=
-\frac{2}{N}
-\sum_{i=1}^{N}
-(\hat y_i-y_i)
+\frac{\partial L}{\partial b} = \frac{2}{N} \sum_{i=1}^{N} (\hat y_i-y_i)
 $$
 
 이다.
@@ -1559,7 +1412,7 @@ b_new = 5 - 0.1(-0.15)
 
 ---
 
-# **33. 실무형 Regression Training Loop**
+# 33. 실무형 Regression Training Loop
 
 [ Python : code ] "GPS Load를 이용한 다음날 Fatigue Score Gradient Descent 학습"
 
@@ -1644,7 +1497,7 @@ Step 5: w=0.9686, b=5.0504, MSE=0.1149
 
 ---
 
-# **34. Training Loop 코드 결과 해석**
+# 34. Training Loop 코드 결과 해석
 
 앞의 결과를 보면
 
@@ -1691,7 +1544,7 @@ MSE
 
 ---
 
-# **35. Training Loop의 상세 흐름도**
+# 35. Training Loop의 상세 흐름도
 
 ```text
             Training Data
@@ -1737,7 +1590,7 @@ MSE
 
 ---
 
-# **36. Batch Size의 실무적 의미**
+# 36. Batch Size의 실무적 의미
 
 Batch Size는 단순히 Update 횟수만 변경하는 것이 아니다.
 
@@ -1767,7 +1620,7 @@ Model Generalization
 
 ---
 
-# **37. Mini-Batch에서는 Shuffling이 중요하다**
+# 37. Mini-Batch에서는 Shuffling이 중요하다
 
 Dataset이 특정 순서로 정렬되어 있다면 Batch가 편향될 수 있다.
 
@@ -1793,9 +1646,7 @@ Forward
 단,
 
 - Time Series
-
 - Sequence Model
-
 - 시계열 종속성이 중요한 Dataset
 
 에서는 무조건 Shuffle해서는 안 된다.
@@ -1804,7 +1655,7 @@ Forward
 
 ---
 
-# **38. Convergence(수렴)란 무엇인가?**
+# 38. Convergence(수렴)란 무엇인가?
 
 Convergence는 Training을 반복하면서 Loss 또는 Parameter가 일정한 값에 가까워지는 현상을 의미한다.
 
@@ -1840,25 +1691,20 @@ Parameter가 `5`에 가까워지고 Loss가 `0`에 가까워진다.
 
 이러한 상태를 **수렴하고 있다**고 표현할 수 있다.
 
-
 <br><br>
 
 ---
 
-# **39. Convergence와 Global Minimum은 다르다**
+# 39. Convergence와 Global Minimum은 다르다
 
 Loss가 더 이상 크게 감소하지 않는다고 해서 반드시 최적의 Model을 찾았다는 의미는 아니다.
 
 특히 복잡한 Neural Network에서는
 
 - Local Minimum
-
 - Saddle Point
-
 - Flat Region
-
 - Poor Learning Rate
-
 - Gradient Vanishing
 
 등 다양한 상황이 존재할 수 있다.
@@ -1877,7 +1723,7 @@ Loss가 멈춤
 
 ---
 
-# **40. Training Loss만 보면 안 되는 이유**
+# 40. Training Loss만 보면 안 되는 이유
 
 Training Loss가 계속 감소해도 Validation Performance는 나빠질 수 있다.
 
@@ -1901,9 +1747,7 @@ Epoch
 따라서 실제 학습에서는
 
 - Training Loss
-
 - Validation Loss
-
 - Validation Metric
 
 을 함께 확인하는 것이 중요하다.
@@ -1912,7 +1756,7 @@ Epoch
 
 ---
 
-# **41. Loss Curve로 학습 상태 판단하기**
+# 41. Loss Curve로 학습 상태 판단하기
 
 | 현상 | 가능한 해석 |
 | --- | --- |
@@ -1928,17 +1772,11 @@ Epoch
 실제 원인은
 
 - Data
-
 - Scaling
-
 - Initialization
-
 - Model Architecture
-
 - Batch Size
-
 - Optimizer
-
 - Learning Rate
 
 등 여러 요소가 결합되어 나타날 수 있다.
@@ -1947,7 +1785,7 @@ Epoch
 
 ---
 
-# **42. Epoch이 많으면 항상 좋은가?**
+# 42. Epoch이 많으면 항상 좋은가?
 
 Epoch 수를 증가시키면 Training Dataset을 더 많이 반복하게 된다.
 
@@ -1965,7 +1803,7 @@ Epoch 수를 증가시키면 Training Dataset을 더 많이 반복하게 된다.
 
 ---
 
-# **43. Gradient Descent 전체 학습 구조**
+# 43. Gradient Descent 전체 학습 구조
 
 전체 Machine Learning Training Process는 다음과 같다.
 
@@ -2003,7 +1841,7 @@ Epoch 수를 증가시키면 Training Dataset을 더 많이 반복하게 된다.
 
 ---
 
-# **44. 지금까지 배운 개념의 연결**
+# 44. 지금까지 배운 개념의 연결
 
 이전 강의들과 연결하면 전체 흐름은 다음과 같다.
 
@@ -2037,9 +1875,9 @@ Learning
 
 ---
 
-# **45. 자주 혼동하는 개념**
+# 45. 자주 혼동하는 개념
 
-> ## **45-1) Gradient Descent 한 번 = Epoch 한 번인가?**
+## 45-1) Gradient Descent 한 번 = Epoch 한 번인가?
 
 아니다.
 
@@ -2049,7 +1887,7 @@ Mini-Batch Training이라면 하나의 Batch에 대한 Update가 보통 한 Iter
 
 <br>
 
-> ## **45-2) Backpropagation이 Parameter를 바꾸는가?**
+## 45-2) Backpropagation이 Parameter를 바꾸는가?
 
 아니다.
 
@@ -2059,7 +1897,7 @@ Parameter를 실제로 변경하는 것은 Optimizer의 역할이다.
 
 <br>
 
-> ## **45-3) Learning Rate가 작으면 무조건 안전한가?**
+## 45-3) Learning Rate가 작으면 무조건 안전한가?
 
 반드시 그렇지는 않다.
 
@@ -2067,7 +1905,7 @@ Parameter를 실제로 변경하는 것은 Optimizer의 역할이다.
 
 <br>
 
-> ## **45-4) Loss는 매 Iteration마다 반드시 감소하는가?**
+## 45-4) Loss는 매 Iteration마다 반드시 감소하는가?
 
 아니다.
 
@@ -2077,7 +1915,7 @@ Parameter를 실제로 변경하는 것은 Optimizer의 역할이다.
 
 <br>
 
-> ## **45-5) Batch Size를 두 배로 하면 Learning Rate도 무조건 두 배로 해야 하는가?**
+## 45-5) Batch Size를 두 배로 하면 Learning Rate도 무조건 두 배로 해야 하는가?
 
 항상 그런 것은 아니다.
 
@@ -2087,15 +1925,15 @@ Batch Size와 Learning Rate 사이에는 실무적인 조정 전략이 존재하
 
 ---
 
-# **46. Advanced 추가 학습**
+# 46. Advanced 추가 학습
 
-> ## **46-1) Momentum**
+## 46-1) Momentum
 
 이전 Gradient의 이동 방향을 일부 누적하여 Optimization을 더 빠르고 안정적으로 진행하도록 돕는 방법이다.
 
 <br>
 
-> ## **46-2) Learning Rate Scheduler**
+## 46-2) Learning Rate Scheduler
 
 Training이 진행됨에 따라 Learning Rate를 변화시키는 방법이다.
 
@@ -2103,19 +1941,19 @@ Training이 진행됨에 따라 Learning Rate를 변화시키는 방법이다.
 
 <br>
 
-> ## **46-3) Adam Optimizer**
+## 46-3) Adam Optimizer
 
 Gradient뿐 아니라 Gradient의 1차·2차 통계량을 이용하여 Parameter별 Update 크기를 조절하는 Optimizer이다.
 
 <br>
 
-> ## **46-4) Early Stopping**
+## 46-4) Early Stopping
 
 Validation Performance가 일정 기간 개선되지 않으면 Training을 중단하여 불필요한 학습과 Overfitting을 줄이는 방법이다.
 
 <br>
 
-> ## **46-5) Gradient Clipping**
+## 46-5) Gradient Clipping
 
 Gradient가 지나치게 커지는 상황에서 Gradient 크기를 제한하여 Training을 안정화하는 방법이다.
 
@@ -2123,7 +1961,7 @@ Gradient가 지나치게 커지는 상황에서 Gradient 크기를 제한하여 
 
 ---
 
-# **47. 핵심정리**
+# 47. 핵심정리
 
 1. Optimization은 Loss Function을 작게 만드는 Model Parameter를 찾는 과정이다.
 
@@ -2132,11 +1970,7 @@ Gradient가 지나치게 커지는 상황에서 Gradient 크기를 제한하여 
 3. 기본 Update 공식은
 
 $$
-\theta_{new}
-=
-\theta_{old}
--
-\alpha\nabla L(\theta_{old})
+\theta_{new} = \theta_{old} - \alpha\nabla L(\theta_{old})
 $$
 
 이다.
@@ -2224,11 +2058,7 @@ $$
 35. 마지막 Batch까지 사용하면 일반적으로
 
 $$
-Iterations
-=
-\left\lceil
-\frac{N}{BatchSize}
-\right\rceil
+Iterations = \left\lceil \frac{N}{BatchSize} \right\rceil
 $$
 
 로 계산할 수 있다.
@@ -2236,9 +2066,7 @@ $$
 36. 전체 Update 횟수는
 
 $$
-Epochs
-\times
-Iterations\ per\ Epoch
+Epochs \times \text{Iterations per Epoch}
 $$
 
 으로 계산할 수 있다.
