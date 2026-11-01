@@ -1,9 +1,8 @@
-
 # [06. MSE와 Cross Entropy의 수학적 원리]
 
 <br>
 
-# **1. 손실 함수(Loss Function)는 왜 필요한가?**
+# 1. 손실 함수(Loss Function)는 왜 필요한가?
 
 머신러닝 모델은 입력 데이터를 이용하여 예측값을 계산한다.
 
@@ -51,7 +50,7 @@ Loss 감소
 
 ---
 
-# **2. 문제 유형에 따라 Loss Function이 달라진다**
+# 2. 문제 유형에 따라 Loss Function이 달라진다
 
 Model이 해결하려는 문제와 가정하는 Probability Distribution이 다르면 적절한 Loss도 달라진다.
 
@@ -75,7 +74,7 @@ Model이 해결하려는 문제와 가정하는 Probability Distribution이 다�
 
 ---
 
-# **3. MLE와 Loss Function의 공통 구조**
+# 3. MLE와 Loss Function의 공통 구조
 
 Maximum Likelihood Estimation의 목적은 관측 데이터를 가장 그럴듯하게 설명하는 Parameter를 찾는 것이다.
 
@@ -87,7 +86,6 @@ $$
 - `D`: 관측 Dataset
 - `L(θ | D)`: Likelihood
 
-
 Likelihood는 여러 확률 또는 Probability Density의 곱으로 표현되는 경우가 많다.
 
 계산의 안정성과 편의를 위해 Log를 적용하면
@@ -95,7 +93,6 @@ Likelihood는 여러 확률 또는 Probability Density의 곱으로 표현되는
 $$
 \arg\max_{\theta}L = \arg\max_{\theta}\log L
 $$
-
 
 여기에 음수를 붙이면 Maximum 문제가 Minimum 문제로 바뀐다.
 
@@ -119,7 +116,7 @@ MSE와 Cross Entropy는 특정 Probability Distribution을 가정했을 때 이�
 
 ---
 
-# **4. MSE(Mean Squared Error)**
+# 4. MSE(Mean Squared Error)
 
 MSE는 Regression에서 가장 대표적으로 사용하는 Loss Function 중 하나이다.
 
@@ -155,7 +152,7 @@ MSE
 
 ---
 
-# **5. MSE를 사용하는 이유**
+# 5. MSE를 사용하는 이유
 
 MSE에서는 Error를 제곱하기 때문에 **양수와 음수 Error가 서로 상쇄되지 않는다.**
 
@@ -194,7 +191,7 @@ Error = -3
 
 ---
 
-# **6. 스포츠 회귀 데이터로 MSE 계산하기**
+# 6. 스포츠 회귀 데이터로 MSE 계산하기
 
 선수의 30m Sprint Time을 예측한다고 하자.
 
@@ -241,7 +238,7 @@ $$
 
 ---
 
-# **7. NumPy로 MSE 계산하기**
+# 7. NumPy로 MSE 계산하기
 
 [ Python : code ] "스프린트 기록 예측 모델의 MSE 계산"
 
@@ -274,7 +271,7 @@ MSE가 작아질수록 평균적으로 실제값과 Prediction 사이의 제곱 
 
 ---
 
-# **8. 정규분포(Normal Distribution)**
+# 8. 정규분포(Normal Distribution)
 
 정규분포(Normal Distribution)는 **평균(Mean)을 중심으로 데이터가 좌우 대칭으로 퍼져 있는 연속 확률분포**이다.
 
@@ -294,7 +291,7 @@ $$
 
 <br>
 
-> ## 8-1) 정규분포 그래프
+## 8-1) 정규분포 그래프
 
 예를 들어 투수의 구속이 평균 140km/h, 표준편차 3km/h인 정규분포를 따른다고 가정하자.
 
@@ -320,7 +317,7 @@ xychart-beta
 
 <br>
 
-> ## 8-2) 회귀 모델에서 정규분포의 의미
+## 8-2) 회귀 모델에서 정규분포의 의미
 
 회귀(Regression) 모델은 구속, 거리, 속도처럼 연속적인 숫자를 예측한다.
 
@@ -348,7 +345,7 @@ $$
 
 <br>
 
-> ## 8-3) Noise(오차)의 의미
+## 8-3) Noise(오차)의 의미
 
 모델의 예측값과 실제값 사이에는 오차가 발생할 수 있다.
 
@@ -366,7 +363,6 @@ $$
 \epsilon_i\sim N(0,\sigma^2)
 $$
 
-
 예를 들어
 
 $$
@@ -379,9 +375,9 @@ $$
 
 ---
 
-# **9. 정규분포와 Gaussian NLL의 관계**
+# 9. 정규분포와 Gaussian NLL의 관계
 
-> ## **9-1. 정규분포를 사용하는 이유**
+## 9-1. 정규분포를 사용하는 이유
 
 회귀(Regression) 모델은 구속, 거리, 속도와 같은 연속형 값을 예측한다.
 
@@ -413,7 +409,7 @@ $$
 
 <br>
 
-> ## **9-2. 정규분포와 Likelihood의 관계**
+## 9-2. 정규분포와 Likelihood의 관계
 
 정규분포에서는 실제값이 평균에 가까울수록 확률밀도(Probability Density)가 높아진다.
 
@@ -437,7 +433,7 @@ $$
 
 <br>
 
-> ## **9-3. Gaussian NLL이란?**
+## 9-3. Gaussian NLL이란?
 
 `Gaussian`은 정규분포의 가장 대표적인 연속확률분포이다.
 
@@ -469,7 +465,7 @@ $$
 
 $$
 \boxed{
-Gaussian\ NLL
+\text{Gaussian NLL}
 =
 \frac12\log(2\pi\sigma^2)
 +
@@ -501,9 +497,9 @@ $$
 
 ---
 
-# **10. 정규분포 Likelihood에서 MSE가 나오는 과정**
+# 10. 정규분포 Likelihood에서 MSE가 나오는 과정
 
-> ## **10-1. 여러 관측값의 Likelihood 계산**
+## 10-1. 여러 관측값의 Likelihood 계산
 
 실제 머신러닝에서는 하나의 데이터가 아니라 여러 Sample을 이용하여 모델을 학습한다.
 
@@ -524,7 +520,7 @@ $$
 
 <br>
 
-> ## **10-2. Log-Likelihood로 변환**
+## 10-2. Log-Likelihood로 변환
 
 Likelihood는 여러 확률밀도를 곱해야 하므로 계산이 복잡해질 수 있다.
 
@@ -555,7 +551,7 @@ $$
 
 <br>
 
-> ## **10-3. Negative Log-Likelihood 적용**
+## 10-3. Negative Log-Likelihood 적용
 
 머신러닝에서는 일반적으로 Loss를 최소화하는 방향으로 학습한다.
 
@@ -584,7 +580,7 @@ $$
 
 <br>
 
-> ## **10-4. 왜 Gaussian NLL이 MSE와 연결될까?**
+## 10-4. 왜 Gaussian NLL이 MSE와 연결될까?
 
 Gaussian NLL을 다시 살펴보자.
 
@@ -627,7 +623,7 @@ Sample 개수도 고정되어 있으므로 SSE를 최소화하는 것과 MSE를 
 
 <br>
 
-> ## **10-5. 실제 숫자로 이해하기**
+## 10-5. 실제 숫자로 이해하기
 
 투수의 실제 구속과 모델의 예측값이 다음과 같다고 가정하자.
 
@@ -673,7 +669,7 @@ $$
 
 <br>
 
-> ## **10-6. Gaussian NLL과 MSE의 차이**
+## 10-6. Gaussian NLL과 MSE의 차이
 
 | 구분 | Gaussian NLL | MSE |
 |---|---|---|
@@ -688,7 +684,7 @@ $$
 
 <br>
 
-> ## **10-7. 최종 학습 흐름**
+## 10-7. 최종 학습 흐름
 
 ```text
 Regression Model
@@ -715,8 +711,7 @@ Weight & Bias 업데이트
        ⟲ 반복 학습
 ```
 
-
-> ## **10-8. MSE와 Gaussian NLL 비교 예제 (Python)**
+## 10-8. MSE와 Gaussian NLL 비교 예제 (Python)
 
 ### 1. 예제 개요
 
@@ -798,7 +793,7 @@ $$
 Gaussian NLL은 예측 오차가 정규분포를 따른다고 가정하여 계산하는 손실함수이다.
 
 $$
-Gaussian\ Mean\ NLL
+\text{Gaussian Mean NLL}
 =
 \frac12\log(2\pi\sigma^2)
 +
@@ -815,7 +810,7 @@ $$
 
 $$
 \begin{aligned}
-Gaussian\ Mean\ NLL
+\text{Gaussian Mean NLL}
 &=\frac12\log(2\pi\times4)+\frac{MSE}{8}\\
 &\approx1.612+\frac{MSE}{8}
 \end{aligned}
@@ -899,7 +894,7 @@ print("모델 B Mean NLL:", round(nll_B, 3))
 정규분포의 분산이 고정되어 있다면 Gaussian Mean NLL은 다음과 같이 표현된다.
 
 $$
-Gaussian\ Mean\ NLL=Constant+\frac{MSE}{2\sigma^2}
+\text{Gaussian Mean NLL}=Constant+\frac{MSE}{2\sigma^2}
 $$
 
 여기서 분산과 상수는 변하지 않으므로 **MSE가 감소하면 Gaussian NLL도 감소한다.**
@@ -922,13 +917,11 @@ Gaussian NLL 최소화
 
 단, 분산까지 학습하는 경우에는 두 손실함수가 일반적으로 동일한 최적화 문제가 아니다.
 
-
-
 <br><br>
 
 ---
 
-# **11. MSE와 Gaussian NLL의 관계에서 중요한 조건**
+# 11. MSE와 Gaussian NLL의 관계에서 중요한 조건
 
 MSE와 Gaussian NLL이 연결된다고 해서 항상 모든 Regression Problem에 MSE가 최적이라는 뜻은 아니다.
 
@@ -948,7 +941,7 @@ MSE와 Gaussian NLL이 연결된다고 해서 항상 모든 Regression Problem�
 
 ---
 
-# **12. MSE와 MAE의 차이**
+# 12. MSE와 MAE의 차이
 
 Regression에서 자주 비교하는 Loss로 MAE도 있다.
 
@@ -972,10 +965,11 @@ $$
 
 ---
 
-# **13. Binary Cross Entropy (BCE)**
+# 13. Binary Cross Entropy (BCE)
 
 Binary Cross Entropy(BCE)
--  **이진 분류에서 모델이 예측한 확률과 실제 정답을 비교하여 오차를 계산하는 손실함수(Loss Function)**
+
+- **이진 분류에서 모델이 예측한 확률과 실제 정답을 비교하여 오차를 계산하는 손실함수(Loss Function)**
 
 <br>
 
@@ -1100,16 +1094,15 @@ Weight, Bias 업데이트
 
 **결론적으로 BCE는 이진 분류에서 실제 정답에 부여한 예측 확률을 평가하는 손실함수이며, BCE를 최소화하는 것은 베르누이 분포의 Likelihood를 최대화하는 것과 연결된다.**
 
-
 <br><br>
 
 ---
 
-# **14. BCE는 실제 정답의 확률만 선택한다**
+# 14. BCE는 실제 정답의 확률만 선택한다
 
 BCE 식을 실제 정답에 따라 나누어 보면 이해하기 쉽다.
 
-> ## **14-1) 실제 정답이 1**
+## 14-1) 실제 정답이 1
 
 `y=1`이라면
 
@@ -1125,7 +1118,7 @@ $$
 
 <br>
 
-> ## **14-2) 실제 정답이 0**
+## 14-2) 실제 정답이 0
 
 `y=0`이라면
 
@@ -1143,10 +1136,9 @@ $$
 
 <br><br>
 
-
 ---
 
-# **15. 예측 확률에 따른 BCE 변화**
+# 15. 예측 확률에 따른 BCE 변화
 
 실제 정답이 `1`이라고 하자.
 
@@ -1175,7 +1167,7 @@ $$
 
 ---
 
-# **16. Bernoulli Distribution과 BCE**
+# 16. Bernoulli Distribution과 BCE
 
 Binary Target은 Bernoulli Distribution으로 표현할 수 있다.
 
@@ -1225,7 +1217,7 @@ Binary Cross Entropy 최소화
 
 ---
 
-# **17. 스포츠 Binary Classification 예제**
+# 17. 스포츠 Binary Classification 예제
 
 선수의 다음날 고부하 여부를 예측했다고 하자.
 
@@ -1253,7 +1245,7 @@ Model은 실제 Label에 높은 Probability를 줄수록 낮은 Loss를 얻는�
 
 ---
 
-# **18. NumPy로 BCE 계산하기**
+# 18. NumPy로 BCE 계산하기
 
 [ Python : code ] "선수 고부하 이진 분류 모델의 Binary Cross Entropy 계산"
 
@@ -1287,7 +1279,7 @@ Mean BCE가 작다는 것은 주어진 Dataset에서 실제 Label에 상대적�
 
 ---
 
-# **19. BCE와 Accuracy는 같은 정보가 아니다**
+# 19. BCE와 Accuracy는 같은 정보가 아니다
 
 두 Model이 같은 Class를 예측해도 BCE는 다를 수 있다.
 
@@ -1318,7 +1310,7 @@ Cross Entropy
 
 ---
 
-# **20. Categorical Cross Entropy**
+# 20. Categorical Cross Entropy
 
 Multiclass Classification에서는 여러 Class 중 하나가 정답이다.
 
@@ -1351,7 +1343,7 @@ $$
 
 ---
 
-# **21. One-Hot Encoding**
+# 21. One-Hot Encoding
 
 실제 정답이 Running이라면 Class Index는 `1`이다.
 
@@ -1390,7 +1382,7 @@ $$
 
 ---
 
-# **22. Categorical Distribution과 Cross Entropy**
+# 22. Categorical Distribution과 Cross Entropy
 
 Categorical Distribution의 Likelihood는
 
@@ -1434,7 +1426,7 @@ Categorical Cross Entropy 최소화
 
 ---
 
-# **23. 센서 동작 분류 CE 예제**
+# 23. 센서 동작 분류 CE 예제
 
 실제 동작이 `Running`이라고 하자.
 
@@ -1488,7 +1480,7 @@ $$
 
 ---
 
-# **24. 여러 Sample의 평균 Categorical CE**
+# 24. 여러 Sample의 평균 Categorical CE
 
 다음과 같은 동작 분류 결과가 있다고 하자.
 
@@ -1538,7 +1530,7 @@ $$
 
 ---
 
-# **25. NumPy로 Categorical Cross Entropy 계산하기**
+# 25. NumPy로 Categorical Cross Entropy 계산하기
 
 [ Python : code ] "IMU 동작 분류 모델의 Categorical Cross Entropy 계산"
 
@@ -1576,7 +1568,7 @@ Mean CE: 0.415
 
 ---
 
-# **26. One-Hot 방식으로 CE 계산하기**
+# 26. One-Hot 방식으로 CE 계산하기
 
 [ Python : code ] "One-Hot Label을 이용한 Categorical Cross Entropy 계산"
 
@@ -1617,7 +1609,7 @@ Class Index를 사용하든 One-Hot을 사용하든 같은 Probability Distribut
 
 ---
 
-# **27. Likelihood와 Mean CE의 관계**
+# 27. Likelihood와 Mean CE의 관계
 
 앞선 Example에서 실제 정답에 부여한 Probability는
 
@@ -1656,7 +1648,7 @@ $$
 Mean CE는
 
 $$
-Mean\ CE = \frac{1.245}{3}
+\text{Mean CE} = \frac{1.245}{3}
 $$
 
 $$
@@ -1679,7 +1671,7 @@ Mean Cross Entropy
 
 ---
 
-# **28. BCE와 Categorical CE 비교**
+# 28. BCE와 Categorical CE 비교
 
 | 구분 | BCE | Categorical CE |
 | --- | --- | --- |
@@ -1699,7 +1691,7 @@ Mean Cross Entropy
 
 ---
 
-# **29. Multiclass와 Multilabel을 구분해야 한다**
+# 29. Multiclass와 Multilabel을 구분해야 한다
 
 Multiclass Classification은 여러 Class 중 정확히 하나가 정답이다.
 
@@ -1751,7 +1743,7 @@ BCE
 
 ---
 
-# **30. MSE·BCE·CE를 확률분포 관점에서 비교**
+# 30. MSE·BCE·CE를 확률분포 관점에서 비교
 
 | 문제 | Model의 확률적 가정 | Loss |
 | --- | --- | --- |
@@ -1785,7 +1777,7 @@ Parameter 학습
 
 ---
 
-# **31. 세 Loss의 실무 예제 비교**
+# 31. 세 Loss의 실무 예제 비교
 
 | Dataset | Target | 문제 | 적절한 Loss 예시 |
 | --- | --- | --- | --- |
@@ -1802,7 +1794,7 @@ Loss는 Domain 자체보다 **Target의 구조와 Probability Model**에 따라 
 
 ---
 
-# **32. Numerical Stability**
+# 32. Numerical Stability
 
 Cross Entropy를 직접 구현할 때 Probability가 정확히 0이면
 
@@ -1855,7 +1847,7 @@ print(-np.log(safe_probabilities))
 
 ---
 
-# **33. Softmax와 Cross Entropy의 실무 구현**
+# 33. Softmax와 Cross Entropy의 실무 구현
 
 이론적으로 Multiclass Model은
 
@@ -1895,7 +1887,7 @@ Model → Logits → CrossEntropyLoss
 
 ---
 
-# **34. Loss 값이 작다고 무조건 좋은 Model인가?**
+# 34. Loss 값이 작다고 무조건 좋은 Model인가?
 
 Training Loss가 작다는 것은 Training Dataset을 기준으로 Model이 Objective Function을 잘 최소화했다는 의미이다.
 
@@ -1924,7 +1916,7 @@ Regression에서는 MSE가 작더라도 특정 Group에서 Error가 크게 나�
 
 ---
 
-# **35. Loss와 Evaluation Metric 차이**
+# 35. Loss와 Evaluation Metric 차이
 
 | 구분 | Loss Function | Evaluation Metric |
 | --- | --- | --- |
@@ -1940,7 +1932,7 @@ Regression에서는 MSE가 작더라도 특정 Group에서 Error가 크게 나�
 
 ---
 
-# **36. Loss 계산의 전체 흐름**
+# 36. Loss 계산의 전체 흐름
 
 Regression은 다음과 같다.
 
@@ -1998,7 +1990,7 @@ Categorical CE
 
 ---
 
-# **37. Probability Model부터 Loss까지의 전체 흐름도**
+# 37. Probability Model부터 Loss까지의 전체 흐름도
 
 ```text
                 Machine Learning Problem
@@ -2033,7 +2025,7 @@ Categorical CE
 
 ---
 
-# **38. 복합 실무 예제**
+# 38. 복합 실무 예제
 
 하나의 Sports Analytics Platform에서 다음 세 Model을 운영한다고 하자.
 
@@ -2070,9 +2062,9 @@ Multiclass Classification
 
 ---
 
-# **39. 자주 혼동하는 내용**
+# 39. 자주 혼동하는 내용
 
-> ## **39-1) MSE가 곧 Gaussian NLL 자체인가?**
+## 39-1) MSE가 곧 Gaussian NLL 자체인가?
 
 항상 완전히 동일한 값은 아니다.
 
@@ -2082,7 +2074,7 @@ Fixed Variance Gaussian Model에서는 Gaussian NLL에서 Parameter Optimization
 
 <br>
 
-> ## **39-2) BCE가 Accuracy인가?**
+## 39-2) BCE가 Accuracy인가?
 
 아니다.
 
@@ -2092,7 +2084,7 @@ BCE는 실제 정답에 부여한 Probability까지 평가한다.
 
 <br>
 
-> ## **39-3) CE에서는 가장 큰 Probability만 사용하면 되는가?**
+## 39-3) CE에서는 가장 큰 Probability만 사용하면 되는가?
 
 Loss 계산에서는 실제 정답 Class에 부여한 Probability가 핵심이다.
 
@@ -2100,7 +2092,7 @@ Argmax Class가 정답이더라도 Probability가 낮으면 Loss는 상대적으
 
 <br>
 
-> ## **39-4) Cross Entropy가 작으면 Probability가 반드시 Calibration 되어 있는가?**
+## 39-4) Cross Entropy가 작으면 Probability가 반드시 Calibration 되어 있는가?
 
 그렇지 않다.
 
@@ -2108,7 +2100,7 @@ Argmax Class가 정답이더라도 Probability가 낮으면 Loss는 상대적으
 
 <br>
 
-> ## **39-5) Multiclass에 BCE를 절대 사용할 수 없는가?**
+## 39-5) Multiclass에 BCE를 절대 사용할 수 없는가?
 
 문제 구조를 구분해야 한다.
 
@@ -2120,9 +2112,9 @@ Mutually Exclusive한 하나의 Class를 선택하는 일반적인 Multiclass에
 
 ---
 
-# **40. Advanced 추가 학습**
+# 40. Advanced 추가 학습
 
-> ## **40-1) Heteroscedastic Regression**
+## 40-1) Heteroscedastic Regression
 
 Sample마다 Noise Variance가 다르다고 생각하면 Model이 Mean뿐 아니라 Variance도 예측하도록 만들 수 있다.
 
@@ -2130,7 +2122,7 @@ Sample마다 Noise Variance가 다르다고 생각하면 Model이 Mean뿐 아니
 
 <br>
 
-> ## **40-2) Label Smoothing**
+## 40-2) Label Smoothing
 
 Multiclass Classification에서 정답 Distribution을 완전한 `1/0` 대신 약간 부드럽게 설정하는 방법이다.
 
@@ -2138,7 +2130,7 @@ Multiclass Classification에서 정답 Distribution을 완전한 `1/0` 대신 �
 
 <br>
 
-> ## **40-3) Class Weight**
+## 40-3) Class Weight
 
 Imbalanced Classification에서는 특정 Class의 Loss에 더 큰 Weight를 부여할 수 있다.
 
@@ -2146,7 +2138,7 @@ Imbalanced Classification에서는 특정 Class의 Loss에 더 큰 Weight를 부
 
 <br>
 
-> ## **40-4) Focal Loss**
+## 40-4) Focal Loss
 
 쉽게 맞히는 Sample보다 어렵거나 잘못 분류되는 Sample에 더 집중하도록 Cross Entropy를 변형한 Loss이다.
 
@@ -2154,7 +2146,7 @@ Imbalanced Classification에서는 특정 Class의 Loss에 더 큰 Weight를 부
 
 ---
 
-# **41. 핵심정리**
+# 41. 핵심정리
 
 1. Loss Function은 Model Prediction과 실제 Target의 차이를 수치화하고 Parameter 학습의 기준을 제공한다.
 
